@@ -92,6 +92,7 @@ git merge <BranchName>
 git reset --hard HEAD^     回退到上一版本
 git reset --hard HEAD^^    回退到上上一版本
 git reset --hard HEAD~100  回退到上100版本
+git reset --hard <commit id>  回退到某版本
 ```
 
 19.强制推送
@@ -100,11 +101,24 @@ git push -f
 git push -f origin <BranchName>
 ```
 
-20.基本
+20.查看所有分支的所有操作记录（包括（包括commit和reset的操作），包括已经被删除的commit记录
+```git
+git reflog
+```
+
+21.不小心将代码改到了master，想保存改动到qa分支并恢复master
+```git
+master: git stash
+master: git checkout qa
+qa: git stash apply
+```
+
+22.基本
 ```git
 git add .            添加所有改动文件到缓存区
 git commit -m "xxx"  提交修改
 git push             当前分支只有一个远程分支时
+git clone <https> | <ssh>
 ```
 
 
