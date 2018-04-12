@@ -52,7 +52,7 @@ git branch -d <BranchName>
 git push origin --delete <BranchName>
 ```
 
-11.新建分支push时被动添加关联
+11.新建分支添加关联（push）
 ```git
 git push --set-upstream origin <BranchName>    远程会自动创建同名分支
 ```
@@ -62,32 +62,37 @@ git push --set-upstream origin <BranchName>    远程会自动创建同名分支
 git push -u origin <BranchName>    远程会自动创建同名分支
 ```
 
-13.推送及拉取指定分支
+13.新建本地分支添加关联（pull）
+```
+git branch --set-upstream-to=origin/<BranchName>   远程已存在同名分支时
+```
+
+14.推送及拉取指定分支
 ```git
 git push origin <BranchName>
 git pull origin <BranchName>
 ```
 
-14.注释说明写错需要修改时
+15.注释说明写错需要修改时
 ```git
 git commit --amend
 ```
 
-15.上面指令会进入vm编辑器模式
+16.上面指令会进入vm编辑器模式
 ```git
 命令模式下按i进入插入模式修改
 ESC键返回命令模式
 英文状态下输入 :wq 保存并退出
 ```
 
-16.英文状态下 按q退出git log
+17.英文状态下 按q退出git log
 
-17.合并某分支到当前分支
+18.合并某分支到当前分支
 ```git
 git merge <BranchName>
 ```
 
-18.版本回退
+19.版本回退
 ```git
 git reset --hard HEAD^     回退到上一版本
 git reset --hard HEAD^^    回退到上上一版本
@@ -95,25 +100,25 @@ git reset --hard HEAD~100  回退到上100版本
 git reset --hard <commit id>  回退到某版本
 ```
 
-19.强制推送
+20.强制推送
 ```git
 git push -f
 git push -f origin <BranchName>
 ```
 
-20.查看所有分支的所有操作记录（包括（包括commit和reset的操作），包括已经被删除的commit记录
+21.查看所有分支的所有操作记录（包括（包括commit和reset的操作），包括已经被删除的commit记录
 ```git
 git reflog
 ```
 
-21.不小心将代码改到了master，想保存改动到qa分支并恢复master
+22.不小心将代码改到了master，想保存改动到qa分支并恢复master
 ```git
 master: git stash
 master: git checkout qa
 qa: git stash apply
 ```
 
-22.基本
+23.基本
 ```git
 git add .            添加所有改动文件到缓存区
 git commit -m "xxx"  提交修改
