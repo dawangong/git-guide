@@ -90,6 +90,7 @@ ESC键返回命令模式
 18.合并某分支到当前分支
 ```git
 git merge <BranchName>
+git rebase <BranchName> // 不会产生无效的commit message
 ```
 
 19.版本回退
@@ -124,6 +125,47 @@ git add .            添加所有改动文件到缓存区
 git commit -m "xxx"  提交修改
 git push             当前分支只有一个远程分支时
 git clone <https> | <ssh>
+```
+
+24.git commit -am "xxx"
+```git
+效果等同于:
+git add .
+git commit -m "xxx"
+```
+
+25.commit很多次但只想要一个commit
+```git
+假设在此之前已经commit过一次,之后的commit如下操作:
+git commit -a --amend -m "xxx"
+```
+
+26.合并commit（例如合并1-3条）
+```git
+git rebase -i HEAD~3
+
+执行后如下:
+pick  '注释**********'
+
+pick  '注释*********'
+
+pick '注释**********'
+修改如下:
+
+pick  '注释**********'
+
+s  '注释*********'
+
+s '注释**********'
+
+如果有冲突，需要修改,完成后要输入保存指令:
+git add .  
+git rebase --continue
+
+放弃合并:
+git rebase --abort
+
+没有冲突则保存退出即可。
 ```
 
 
