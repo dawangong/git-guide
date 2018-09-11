@@ -171,4 +171,17 @@ git rebase --abort
 git commit --amend
 ```
 
+27.小伙伴增加了一个新的远程分支而自己本地git branch -r 看不到
+```git
+git fetch
+```
+
+28.工作到一半需要切换分支但不想commit
+```git
+git stash       //先保存当前进度
+...             //其他分支作业
+git stash pop   //切回自己分支恢复
+```
+
+
 
