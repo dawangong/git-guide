@@ -183,5 +183,11 @@ git stash       //先保存当前进度
 git stash pop   //切回自己分支恢复
 ```
 
+29.多个stash
+```git
+git stash list          //查看保存的进度列表
+git stash pop stash@{X} //stash@{X} 由命令 git stash list 得到
+```
+
 
 
