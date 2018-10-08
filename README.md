@@ -166,9 +166,6 @@ git rebase --continue
 git rebase --abort
 
 没有冲突则保存退出即可。
-
-合并之后commit message也会被合并，如果需要修改可以使用修改commit的命令，同15:
-git commit --amend
 ```
 
 27.小伙伴增加了一个新的远程分支而自己本地git branch -r 看不到
@@ -187,6 +184,11 @@ git stash pop   //切回自己分支恢复
 ```git
 git stash list          //查看保存的进度列表
 git stash pop stash@{X} //stash@{X} 由命令 git stash list 得到
+```
+
+30.修改push过的commit
+```git
+git commit --amend -m "xxx"
 ```
 
 
